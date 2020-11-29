@@ -1,0 +1,245 @@
+<b:includable id='breadcrumb' var='post'>
+<b:if cond='data:blog.homepageUrl != data:blog.url'>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:post.labels'>
+<div class='breadcrumbs-box'>
+<div class='breadcrumbs'>
+  <!--
+<span itemscope='itemscope' itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a expr:href='data:blog.homepageUrl' itemprop='url' title='Home'>
+  <span itemprop='name'>Home</span></a></span>
+<span class='gap'>/</span><b:loop values='data:post.labels' var='label'><span itemscope='itemscope' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;max-results=10&quot;' expr:title='data:label.name' itemprop='url'>
+<span itemprop='name'><data:label.name/></span></a></span><span class='gap'>/</span></b:loop><span><data:post.title/></span>
+-->
+  <span itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+<span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+<a expr:href="data:blog.homepageUrl" itemprop="url" title="Home">
+<span itemprop="name">Home</span></a>
+</span>
+</span>
+<span class='gap'>›</span>
+<b:loop values="data:post.labels" var="label">
+<span itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+<span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+<a expr:href='data:label.url + &quot;?&amp;max-results=10&quot;' expr:title='data:label.name' itemprop='url' target='_blank'>
+<span itemprop="name"><data:label.name/></span></a>
+</span>
+</span>
+<span class='gap'>/</span>
+</b:loop>
+<span class='gap'>›</span>
+<span><data:post.title/></span>
+
+</div>
+</div>
+</b:if>
+</b:loop>
+</b:if>
+</b:if>
+</b:includable>
+
+
+
+
+
+<!-- breadcrumb start -->
+ <style>
+.breadcrumbs-box{background:none;width:auto;overflow:hidden;margin:0 0 10px;padding:0;}
+.breadcrumbs{background:0;width:auto;margin:0px;padding:0;font-size:12px;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.breadcrumbs li{list-style-type:none;display:inline-block;float:left}
+.breadcrumbs a{display:inline-block;text-decoration:none;outline:0;transition:all .3s ease-in-out;color:#666}
+.breadcrumbs a:hover{color:orange}
+.breadcrumbs svg {width: 16px; height: 16px; vertical-align: -4px} 
+.breadcrumbs svg path {fill: # 666}
+.breadcrumbs .gap{margin:0 5px}
+</style>
+ 
+<b:includable id='breadcrumb' var='posts'>
+<span class='breadcrumbs' itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>
+<div class='breadcrumbs-box'>
+<div class='breadcrumbs'>
+<b:if cond='data:blog.homepageUrl != data:blog.url'>
+  <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+    <a expr:href='data:blog.homepageUrl' title='Home' itemprop='item'>
+    <span property='name'><svg viewBox='0 0 24 24'><path d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z' fill='#000000'/></svg> Home</span></a>
+    <meta content='1' property='position'/>
+  </span> 
+  <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg>
+  <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+    <span><data:blog.pageName/></span>
+  <b:else/>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <!-- breadcrumb for the post page -->
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.labels'>
+          <b:loop index='index' values='data:post.labels' var='label'>
+            <b:if cond='data:index &lt; 2'>
+          <!-- b:if cond='data:label.isLast == &quot;true&quot;' -->
+            <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+              <a expr:href='data:label.url' expr:title='data:label.name' itemprop='item'>
+                <svg viewBox='0 0 24 24'><path d='M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z' fill='#000000'/></svg>
+              <span property='name'><data:label.name/></span></a>
+              <meta expr:content='data:index + 2' property='position'/>
+            </span>
+            |
+          <!-- /b:if -->
+            </b:if>  
+          </b:loop>
+          <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg>
+         <svg viewBox='0 0 24 24'><path d='M23 5v13.883l-1 .117v-16c-3.895.119-7.505.762-10.002 2.316-2.496-1.554-6.102-2.197-9.998-2.316v16l-1-.117v-13.883h-1v15h9.057c1.479 0 1.641 1 2.941 1 1.304 0 1.461-1 2.942-1h9.06v-15h-1zm-12 13.645c-1.946-.772-4.137-1.269-7-1.484v-12.051c2.352.197 4.996.675 7 1.922v11.613zm9-1.484c-2.863.215-5.054.712-7 1.484v-11.613c2.004-1.247 4.648-1.725 7-1.922v12.051z' fill='#000000'/></svg>
+          <span><data:post.title/></span>
+          
+        <b:else/>
+          
+          <svg viewBox="0 0 24 24"><path d="M5.495 2h16.505v-2h-17c-1.656 0-3 1.343-3 3v18c0 1.657 1.344 3 3 3h17v-20h-16.505c-1.376 0-1.376-2 0-2zm.505 4h14v16h-14v-16zm8.084 11.958c0 .575-.466 1.042-1.042 1.042-.573 0-1.04-.467-1.04-1.042 0-.576.467-1.042 1.04-1.042.576.001 1.042.467 1.042 1.042zm-1.008-8.958c-1.68 0-2.942 1.122-2.942 3.333h1.648c0-.96.377-1.746 1.26-1.746.52 0 1.07.345 1.118 1.004.051.694-.319 1.046-.788 1.493-1.219 1.158-1.174 1.688-1.174 2.999h1.644c0-.605-.066-1.045.766-1.941.554-.598 1.244-1.342 1.259-2.477.019-1.65-1.147-2.665-2.791-2.665z"/></svg>
+          
+          <span>Unlabelled</span>
+          
+        </b:if>
+      </b:loop>
+    <b:else/>
+      <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+        <!-- breadcrumb for the label archive page and search pages.. -->
+        <svg viewBox='0 0 24 24'><path d='M17.825 24h-15.825v-24h10.189c3.162 0 9.811 7.223 9.811 9.614v10.071l-2-2v-7.228c0-4.107-6-2.457-6-2.457s1.517-6-2.638-6h-7.362v20h11.825l2 2zm-2.026-4.858c-.799.542-1.762.858-2.799.858-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1-.294 1.932-.801 2.714l4.801 4.872-1.414 1.414-4.787-4.858zm-2.799-7.142c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3z'/></svg> 
+        <span>Posts of <data:blog.pageName/></span>
+      <b:else/>
+        <b:if cond='data:blog.pageType == &quot;index&quot;'>
+          <b:if cond='data:blog.pageName == &quot;&quot;'>
+            <span>All Posts</span>
+          <b:else/>
+            <svg viewBox='0 0 24 24'><path d='M17.825 24h-15.825v-24h10.189c3.162 0 9.811 7.223 9.811 9.614v10.071l-2-2v-7.228c0-4.107-6-2.457-6-2.457s1.517-6-2.638-6h-7.362v20h11.825l2 2zm-2.026-4.858c-.799.542-1.762.858-2.799.858-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1-.294 1.932-.801 2.714l4.801 4.872-1.414 1.414-4.787-4.858zm-2.799-7.142c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3z'/></svg>
+            <span><data:blog.pageName/> Related Posts</span>
+          </b:if>
+        </b:if>
+      </b:if>
+    </b:if>
+  </b:if>
+</b:if>
+    </div></div>
+</span>
+</b:includable>
+            <!-- breadcrumb end -->
+			
+
+
+<b:includable id='breadcrumb' var='posts'> 
+<b:if cond='data:blog.pageType == "item"'> 
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:post.labels'> 
+  
+<div class='breadcrumbs' itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>
+<span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'> 
+<a expr:href='data:blog.homepageUrl' title='Home' itemprop='item'> <span itemprop='name'>
+<svg viewBox='0 0 24 24'><path d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z' fill='#000000'/></svg> Home</span></a> 
+<meta content='1' itemprop='position'/> </span> 
+  <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg> 
+<b:loop index='index' values='data:post.labels' var='label'> 
+  
+  <b:if cond='data:index &lt; 2'>
+  <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'> 
+<svg viewBox='0 0 24 24'><path d='M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z' fill='#000000'/></svg> 
+  <a expr:href="data:label.url" expr:title='data:label.name' itemprop='item' target='_blank'> 
+    <span itemprop='name'><data:label.name/></span>
+    </a> 
+  
+<meta expr:content='data:num+2' itemprop='position'/> </span> 
+  |
+  <!-- <b:if cond='data:label.isLast != "true"'> 
+  </b:if> -->
+  </b:if>
+  </b:loop> 
+
+<svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg> 
+  <svg viewBox='0 0 24 24'><path d='M23 5v13.883l-1 .117v-16c-3.895.119-7.505.762-10.002 2.316-2.496-1.554-6.102-2.197-9.998-2.316v16l-1-.117v-13.883h-1v15h9.057c1.479 0 1.641 1 2.941 1 1.304 0 1.461-1 2.942-1h9.06v-15h-1zm-12 13.645c-1.946-.772-4.137-1.269-7-1.484v-12.051c2.352.197 4.996.675 7 1.922v11.613zm9-1.484c-2.863.215-5.054.712-7 1.484v-11.613c2.004-1.247 4.648-1.725 7-1.922v12.051z' fill='#000000'/></svg>
+         
+<span><data:post.title/></span>
+  
+</div>
+</b:if> 
+</b:loop>
+</b:if> 
+</b:includable>
+
+            
+
+
+
+<b:includable id='breadcrumb' var='posts'> <b:if cond='data:blog.pageType == "item"'> 
+<b:loop values='data:posts' var='post'> <b:if cond='data:post.labels'> 
+<div class='breadcrumbs' itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>
+<span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'> 
+<a expr:href='data:blog.homepageUrl' title='Home' itemprop='item'> <span itemprop='name'>
+<svg viewBox='0 0 24 24'><path d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z' fill='#000000'/></svg> Home</span></a> 
+<meta content='1' itemprop='position'/> </span> 
+<svg viewBox='0 0 24 24'><path d='M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z' fill='#000000'/></svg> <b:loop index='num' values='data:post.labels' var='label'> <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'> <a expr:href="data:label.url" expr:title='data:label.name' itemprop='item'> <span itemprop='name'><data:label.name/></span> </a> <meta expr:content='data:num+2' itemprop='position'/> </span> <b:if cond='data:label.isLast != "true"'> <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg> </b:if> </b:loop> <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg> <span><data:post.title/></span> </div>
+</b:if> </b:loop> </b:if> </b:includable>
+
+
+
+            <b:includable id='breadcrumb' var='posts'>
+<span class='breadcrumbs' itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>
+<div class='breadcrumbs-box'>
+<div class='breadcrumbs'>
+<b:if cond='data:blog.homepageUrl != data:blog.url'>
+  <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+    <a expr:href='data:blog.homepageUrl' itemprop='item' title='Home'>
+    <span property='name'><svg viewBox='0 0 24 24'><path d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z' fill='#000000'/></svg> Home</span></a>
+    <meta content='1' property='position'/>
+  </span> 
+  <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg>
+  <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+    <span><data:blog.pageName/></span>
+  <b:else/>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <!-- breadcrumb for the post page -->
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.labels'>
+          <b:loop index='index' values='data:post.labels' var='label'>
+            <b:if cond='data:index &lt; 2'>
+          <!-- b:if cond='data:label.isLast == &quot;true&quot;' -->
+            <span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+              <a expr:href='data:label.url' expr:title='data:label.name' itemprop='item'>
+                <svg viewBox='0 0 24 24'><path d='M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z' fill='#000000'/></svg>
+              <span property='name'><data:label.name/></span></a>
+              <meta expr:content='data:index + 2' property='position'/>
+            </span>
+            |
+          <!-- /b:if -->
+            </b:if>  
+          </b:loop>
+          <svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='#000000'/></svg>
+         <svg viewBox='0 0 24 24'><path d='M23 5v13.883l-1 .117v-16c-3.895.119-7.505.762-10.002 2.316-2.496-1.554-6.102-2.197-9.998-2.316v16l-1-.117v-13.883h-1v15h9.057c1.479 0 1.641 1 2.941 1 1.304 0 1.461-1 2.942-1h9.06v-15h-1zm-12 13.645c-1.946-.772-4.137-1.269-7-1.484v-12.051c2.352.197 4.996.675 7 1.922v11.613zm9-1.484c-2.863.215-5.054.712-7 1.484v-11.613c2.004-1.247 4.648-1.725 7-1.922v12.051z' fill='#000000'/></svg>
+          <span><data:post.title/></span>
+          
+        <b:else/>
+          
+          <svg viewBox='0 0 24 24'><path d='M5.495 2h16.505v-2h-17c-1.656 0-3 1.343-3 3v18c0 1.657 1.344 3 3 3h17v-20h-16.505c-1.376 0-1.376-2 0-2zm.505 4h14v16h-14v-16zm8.084 11.958c0 .575-.466 1.042-1.042 1.042-.573 0-1.04-.467-1.04-1.042 0-.576.467-1.042 1.04-1.042.576.001 1.042.467 1.042 1.042zm-1.008-8.958c-1.68 0-2.942 1.122-2.942 3.333h1.648c0-.96.377-1.746 1.26-1.746.52 0 1.07.345 1.118 1.004.051.694-.319 1.046-.788 1.493-1.219 1.158-1.174 1.688-1.174 2.999h1.644c0-.605-.066-1.045.766-1.941.554-.598 1.244-1.342 1.259-2.477.019-1.65-1.147-2.665-2.791-2.665z'/></svg>
+          
+          <span>Unlabeled</span>
+          
+        </b:if>
+      </b:loop>
+    <b:else/>
+      <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+        <!-- breadcrumb for the label archive page and search pages.. -->
+        <svg viewBox='0 0 24 24'><path d='M17.825 24h-15.825v-24h10.189c3.162 0 9.811 7.223 9.811 9.614v10.071l-2-2v-7.228c0-4.107-6-2.457-6-2.457s1.517-6-2.638-6h-7.362v20h11.825l2 2zm-2.026-4.858c-.799.542-1.762.858-2.799.858-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1-.294 1.932-.801 2.714l4.801 4.872-1.414 1.414-4.787-4.858zm-2.799-7.142c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3z'/></svg> 
+        <span>Posts of <data:blog.pageName/></span>
+      <b:else/>
+        <b:if cond='data:blog.pageType == &quot;index&quot;'>
+          <b:if cond='data:blog.pageName == &quot;&quot;'>
+            <span>All Posts</span>
+          <b:else/>
+            <svg viewBox='0 0 24 24'><path d='M17.825 24h-15.825v-24h10.189c3.162 0 9.811 7.223 9.811 9.614v10.071l-2-2v-7.228c0-4.107-6-2.457-6-2.457s1.517-6-2.638-6h-7.362v20h11.825l2 2zm-2.026-4.858c-.799.542-1.762.858-2.799.858-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1-.294 1.932-.801 2.714l4.801 4.872-1.414 1.414-4.787-4.858zm-2.799-7.142c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3z'/></svg>
+            <span><data:blog.pageName/> Related Posts</span>
+          </b:if>
+        </b:if>
+      </b:if>
+    </b:if>
+  </b:if>
+</b:if>
+    </div></div>
+</span>
+</b:includable>
+
+

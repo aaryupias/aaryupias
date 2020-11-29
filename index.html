@@ -4,19 +4,64 @@
 <title>
 Rupak's Hosted File List
 </title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
-<center>
 <div class="container">
+
   <h1>Rupak's Hosted File List</h1>
-  <hr />
- 
-  <a href="http://host.rupak.info.np/boostrap-btn.css" target="_blank"> <button type="button" class="btn btn-info">CSS
-  <svg style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="#ffffff"></path></svg>
-  Bootstrap Button Only</button> </a>
   
+  <input class="form-control" id="anythingSearch" type="text" placeholder="Type Here to Search">
+  <div id="searchHere">
+  <br />
+  <div class="row">
+  
+    <div class="col bg-info"><svg style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="#000000"></path></svg>
+ HTML</div>
+    <div class="col bg-danger"><svg style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="#000000"></path></svg>
+ CSS</div>
+    <div class="col bg-success"><svg style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="#000000"></path></svg>
+ JS</div>
+	<div class="col bg-secondary"><svg style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="#000000"></path></svg>
+ Other</div>
+ 
+  </div>
+ 
+  <div class="row">
+  
+    <div class="col">
+	
+	</div>
+ 
+    <div class="col">
+	<a href="http://host.rupak.info.np/boostrap-btn.css" target="_blank"> 
+		Bootstrap Button Only
+		</a>
+	</div>
+ 
+    <div class="col">
+	
+	</div>
+	
+	<div class="col">
+	
+	</div>
+ 
+  </div>
+  
+  </div>
+
+<script>
+// Filter anything
+$(document).ready(function () {
+  $("#anythingSearch").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#searchHere *").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});</script>
 </div>
-</center>
 </body>
 </html>

@@ -22,40 +22,40 @@ Blogger Contact Form on Page | Rupak's Blog
 </center>
 
 <div class="selectarea">
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://host.rupak.info.np/CSS/blogger-contact-form.css&quot; /&gt;
-&lt;script&gt;
-	var blogId = &#39;<span style="color:red">BlogID</span>&#39;;
-var contactFormMessageSendingMsg =&#39;Sending...&#39;;
-var contactFormMessageSentMsg = &#39;Your message has been sent.&#39;;
-var contactFormMessageNotSentMsg = &#39;Message could not be sent. Please try again later.&#39;;
-var contactFormEmptyMessageMsg =&#39;Message field cannot be empty.&#39;;
-var contactFormInvalidEmailMsg = &#39;A valid email is required.&#39;
-
-var widgetLoaded=false;
-function sendEmailMsg() {
-if(widgetLoaded== false) {
-_WidgetManager._RegisterWidget(&#39;_ContactFormView&#39;, new _WidgetInfo(&#39;ContactForm1&#39;, &#39;sidebar&#39;, null, document.getElementById(&#39;ContactForm1&#39;), {&#39;contactFormMessageSendingMsg&#39;: contactFormMessageSendingMsg , &#39;contactFormMessageSentMsg&#39;: contactFormMessageSentMsg , &#39;contactFormMessageNotSentMsg&#39;: contactFormMessageNotSentMsg , &#39;contactFormInvalidEmailMsg&#39;: contactFormInvalidEmailMsg , &#39;contactFormEmptyMessageMsg&#39;: contactFormEmptyMessageMsg , &#39;title&#39;: &#39;Contact Form&#39;, &#39;blogId&#39;: blogId, &#39;contactFormNameMsg&#39;: &#39;Name&#39;, &#39;contactFormEmailMsg&#39;: &#39;Email&#39;, &#39;contactFormMessageMsg&#39;: &#39;Message&#39;, &#39;contactFormSendMsg&#39;: &#39;Send&#39;, &#39;submitUrl&#39;: &#39;https://www.blogger.com/contact-form.do&#39;}, &#39;displayModeFull&#39;));
-widgetLoaded=true;
-document.getElementById(&#39;ContactForm1_contact-form-submit&#39;).click();
-}
-return true;
-}
-&lt;/script&gt;
- &lt;form name=&#39;contact-form&#39;&gt;
-&lt;div&gt;Name : &lt;/div&gt;
-&lt;input class=&#39;contact-form-name&#39; id=&#39;ContactForm1_contact-form-name&#39; name=&#39;name&#39; size=&#39;30&#39; type=&#39;text&#39; value=&#39;&#39;/&gt;
-&lt;div&gt;Email: &lt;em&gt;(required)&lt;/em&gt;&lt;/div&gt;
-&lt;input class=&#39;contact-form-email&#39; id=&#39;ContactForm1_contact-form-email&#39; name=&#39;email&#39; size=&#39;30&#39; type=&#39;text&#39; value=&#39;&#39;/&gt;
-&lt;div&gt;Message: &lt;em&gt;(required)&lt;/em&gt;&lt;/div&gt;
-&lt;textarea class=&#39;contact-form-email-message&#39; id=&#39;ContactForm1_contact-form-email-message&#39; name=&#39;email-message&#39; rows=&#39;5&#39;&gt;&lt;/textarea&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;input class=&#39;contact-form-button contact-form-button-submit&#39; id=&#39;ContactForm1_contact-form-submit&#39; type=&#39;button&#39; value=&#39;Send&#39; onclick=&quot;sendEmailMsg()&quot;/&gt;
-&lt;div style=&#39;text-align: center; max-width: 450px; width: 100%&#39;&gt;
-&lt;p class=&#39;contact-form-error-message&#39; id=&#39;ContactForm1_contact-form-error-message&#39;&gt;&lt;/p&gt;
-&lt;p class=&#39;contact-form-success-message&#39; id=&#39;ContactForm1_contact-form-success-message&#39;&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/form&gt;
-
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://host.rupak.info.np/CSS/blogger-contact-form.css&quot; /&gt;<br />
+&lt;script&gt;<br />
+var blogId = &#39;<span style="color:red">BlogID</span>&#39;;<br />
+var contactFormMessageSendingMsg =&#39;Sending...&#39;;<br />
+var contactFormMessageSentMsg = &#39;Your message has been sent.&#39;;<br />
+var contactFormMessageNotSentMsg = &#39;Message could not be sent. Please try again later.&#39;;<br />
+var contactFormEmptyMessageMsg =&#39;Message field cannot be empty.&#39;;<br />
+var contactFormInvalidEmailMsg = &#39;A valid email is required.&#39;<br />
+<br />
+var widgetLoaded=false;<br />
+function sendEmailMsg() {<br />
+if(widgetLoaded== false) {<br />
+_WidgetManager._RegisterWidget(&#39;_ContactFormView&#39;, new _WidgetInfo(&#39;ContactForm1&#39;, &#39;sidebar&#39;, null, document.getElementById(&#39;ContactForm1&#39;), {&#39;contactFormMessageSendingMsg&#39;: contactFormMessageSendingMsg , &#39;contactFormMessageSentMsg&#39;: contactFormMessageSentMsg , &#39;contactFormMessageNotSentMsg&#39;: contactFormMessageNotSentMsg , &#39;contactFormInvalidEmailMsg&#39;: contactFormInvalidEmailMsg , &#39;contactFormEmptyMessageMsg&#39;: contactFormEmptyMessageMsg , &#39;title&#39;: &#39;Contact Form&#39;, &#39;blogId&#39;: blogId, &#39;contactFormNameMsg&#39;: &#39;Name&#39;, &#39;contactFormEmailMsg&#39;: &#39;Email&#39;, &#39;contactFormMessageMsg&#39;: &#39;Message&#39;, &#39;contactFormSendMsg&#39;: &#39;Send&#39;, &#39;submitUrl&#39;: &#39;https://www.blogger.com/contact-form.do&#39;}, &#39;displayModeFull&#39;));<br />
+widgetLoaded=true;<br />
+document.getElementById(&#39;ContactForm1_contact-form-submit&#39;).click();<br />
+}<br />
+return true;<br />
+}<br />
+&lt;/script&gt;<br />
+ &lt;form name=&#39;contact-form&#39;&gt;<br />
+&lt;div&gt;Name : &lt;/div&gt;<br />
+&lt;input class=&#39;contact-form-name&#39; id=&#39;ContactForm1_contact-form-name&#39; name=&#39;name&#39; size=&#39;30&#39; type=&#39;text&#39; value=&#39;&#39;/&gt;<br />
+&lt;div&gt;Email: &lt;em&gt;(required)&lt;/em&gt;&lt;/div&gt;<br />
+&lt;input class=&#39;contact-form-email&#39; id=&#39;ContactForm1_contact-form-email&#39; name=&#39;email&#39; size=&#39;30&#39; type=&#39;text&#39; value=&#39;&#39;/&gt;<br />
+&lt;div&gt;Message: &lt;em&gt;(required)&lt;/em&gt;&lt;/div&gt;<br />
+&lt;textarea class=&#39;contact-form-email-message&#39; id=&#39;ContactForm1_contact-form-email-message&#39; name=&#39;email-message&#39; rows=&#39;5&#39;&gt;&lt;/textarea&gt;<br />
+&lt;p&gt;&lt;/p&gt;<br />
+&lt;input class=&#39;contact-form-button contact-form-button-submit&#39; id=&#39;ContactForm1_contact-form-submit&#39; type=&#39;button&#39; value=&#39;Send&#39; onclick=&quot;sendEmailMsg()&quot;/&gt;<br />
+&lt;div style=&#39;text-align: center; max-width: 450px; width: 100%&#39;&gt;<br />
+&lt;p class=&#39;contact-form-error-message&#39; id=&#39;ContactForm1_contact-form-error-message&#39;&gt;&lt;/p&gt;<br />
+&lt;p class=&#39;contact-form-success-message&#39; id=&#39;ContactForm1_contact-form-success-message&#39;&gt;&lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/form&gt;<br />
+<br />
 </div>	<br />
 <script>
 var blogId = '3327356052841626736';

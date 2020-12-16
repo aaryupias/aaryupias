@@ -1,9 +1,9 @@
 
-<style>
-div#ContactForm1 {
+#ContactForm1
+{
 display: none !important;
 }
-</style>
+
 
 .page-contact-form input,
 .page-contact-form textarea {

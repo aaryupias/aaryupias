@@ -20,17 +20,20 @@
 
 blockquote
 {
-max-width: 600px;
-text-align: center;
-margin: 20px;
-padding: 20px;
-font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
-font-size: 15px;
-color: #428bca;
-border-left: 4px solid #428bca;
-border-top-left-radius: 30px;
-border-bottom-left-radius: 30px;
-border-right: 4px solid #428bca;
-border-top-right-radius: 30px;
-border-bottom-right-radius: 30px;
+  position: relative;
+  padding-left: 1em;
+  border-left: 0.2em solid lighten($black, 40%);
+  font-family: 'Roboto', serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 100;
+  &:before, &:after {
+      content: '\201C';
+      font-family: 'Sanchez';
+      color: lighten($black, 40%);
+   }
+   &:after {
+      content: '\201D';
+   }
 }
+

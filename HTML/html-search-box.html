@@ -8,6 +8,7 @@ Simple HTML Search Box | Rupak's Blog
 <link rel="stylesheet" href="https://host.rupak.info.np/CSS/select-all.css" />
 	<link rel="icon" href="../Image/favicon.png" type="image/gif" sizes="16x16">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://host.rupak.info.np/JS/searchbox.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,21 +20,14 @@ Simple HTML Search Box | Rupak's Blog
 <center>
 <h2>HTML Search Box</h2>
 </center>
-<input class="form-control" id="anythingSearch" type="text" placeholder="Type Here to Search">
+<input class="form-control" id="anythingSearch" type="text" placeholder="Type Any Text Listed Below For Result of Search">
 <div id="searchHere">
-All Content Goes Here
-</div>
-<script>
-// Filter anything
-$(document).ready(function () {
-$("#anythingSearch").on("keyup", function () {
-var value = $(this).val().toLowerCase();
-$("#searchHere *").filter(function () {
-$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-});
-});
-});</script>
-	
+<div class="row">
+	<div class="col-sm-4">Hello</div>
+	<div class="col-sm-4">Thank You</div>
+	<div class="col-sm-4">Nice</div>
+	</div>
+</div>	
 <div class="selectarea">
 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
 	&lt;script src=&quot;https://host.rupak.info.np/JS/searchbox.js&quot;&gt;&lt;/script&gt;

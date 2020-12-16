@@ -18,7 +18,7 @@
     user-select: all; /* Chrome and Opera */
 }
 
-.bq
+blockquote
 {
 max-width: 600px;
 text-align: center;

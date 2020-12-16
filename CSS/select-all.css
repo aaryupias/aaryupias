@@ -1,4 +1,4 @@
-selectarea
+.selectarea
 
 {
  background:#F2DEDE none repeat scroll 0 0;
@@ -18,7 +18,7 @@ selectarea
     user-select: all; /* Chrome and Opera */
 }
 
-blockquote
+.blockquote
 {
 max-width: 600px;
 text-align: center;

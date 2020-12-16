@@ -1,0 +1,23 @@
+
+<style>
+div#ContactForm1 {
+display: none !important;
+}
+</style>
+
+.page-contact-form input,
+.page-contact-form textarea {
+width: 100%;
+max-width: 100%;
+margin-bottom: 10px;
+}
+.page-contact-form input.contact-form-button.contact-form-button-submit {
+padding: 10px;
+background: #000; /* Button background color */
+color: #fff; /* Button text color */
+border: none;
+}
+.page-contact-form input.contact-form-button.contact-form-button-submit:hover {
+background: #777; /* Button background hover color */
+color: #fff; /* Button text hover color */
+}

@@ -1,14 +1,14 @@
 .selectarea
 
 {
- background:#374B53 none repeat scroll 0 0;
- border:1px inset #52B9EB;
+ background:#F2DEDE none repeat scroll 0 0;
+ border:1px inset #337AB7;
  height:100%;
  margin:10px;
  overflow:auto;
  padding:6px;
  text-align:left;
- color:#ffffff;
+ color:#B04442;
 
     -webkit-touch-callout: all; /* iOS Safari */
     -webkit-user-select: all; /* Safari */

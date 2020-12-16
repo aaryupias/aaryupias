@@ -1,3 +1,3 @@
-# Rupak's Hosted Files
+# Rupak's Collected Codes
 
-I listed codes that are useful for me while customize my sites or blogs and other.
+Custom edited codes to customize blogs and websites. Collected by Rupak.

@@ -16,33 +16,27 @@ Rupak's Custom HTML Codes Collection
 <div class="row">
 	
 <center>
-<h2>Code to make all text selectable on click</h2>
+<h2>HTML Search Box</h2>
 </center>
-<style>
-.selectarea
-
-{
- background:#374B53 none repeat scroll 0 0;
- border:1px inset #52B9EB;
- height:100%;
- margin:10px;
- overflow:auto;
- padding:6px;
- text-align:left;
- color:#ffffff;
-
-    -webkit-touch-callout: all; /* iOS Safari */
-    -webkit-user-select: all; /* Safari */
-    -khtml-user-select: all; /* Konqueror HTML */
-    -moz-user-select: all; /* Firefox */
-    -ms-user-select: all; /* Internet Explorer/Edge */
-    user-select: all; /* Chrome and Opera */
-}
-</style>
-
 <div class="selectarea">
-
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
+&lt;input class=&quot;form-control&quot; id=&quot;anythingSearch&quot; type=&quot;text&quot; placeholder=&quot;Type Here to Search&quot;&gt;<br />
+  &lt;div id=&quot;searchHere&quot;&gt;<br />
+  
+    All Content Goes Here<br />
 	
+  &lt;/div&gt;<br />
+
+&lt;script&gt;<br />
+// Filter anything<br />
+$(document).ready(function () {<br />
+  $(&quot;#anythingSearch&quot;).on(&quot;keyup&quot;, function () {<br />
+    var value = $(this).val().toLowerCase();<br />
+    $(&quot;#searchHere *&quot;).filter(function () {<br />
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) &gt; -1)<br />
+    });<br />
+  });<br />
+});&lt;/script&gt;<br />
 
 </div>	
 </div>

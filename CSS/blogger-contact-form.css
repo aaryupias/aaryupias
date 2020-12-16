@@ -1,3 +1,6 @@
+div#ContactForm1 {
+display: none !important;
+}
 .contact-form-widget
 {
 margin-left:auto;

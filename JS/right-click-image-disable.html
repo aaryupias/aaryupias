@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+Rupak's Custom HTML Codes Collection
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://host.rupak.info.np/CSS/select-all.css" />
+<link rel="icon" href="../Image/favicon.png" type="image/gif" sizes="16x16">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+  <a href="/"><h1>Rupak's Custom Codes Collection</h1></a>
+  
+<div class="row">
+	
+<center>
+<h2>Disable Right Click on Image Only</h2>
+</center>
+<div class="selectarea">
+&lt;!-- Disable right click on image only https://www.rupak.info.np--&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+function nocontext(e) {
+var clickedTag = (e==null) ? event.srcElement.tagName : e.target.tagName;
+if (clickedTag == &quot;IMG&quot;) {
+alert(alertMsg);
+return false;}}
+var alertMsg = &quot;No Right Click on Image. Thank You.&quot;;
+document.oncontextmenu = nocontext;
+//]]&gt;
+&lt;/script&gt;
+</div>	
+</div>
+
+</body>
+</html>

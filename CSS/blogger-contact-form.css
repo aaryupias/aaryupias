@@ -1,4 +1,4 @@
-div#ContactForm1 {
+div.ContactForm {
 display: none !important;
 }
 .contact-form-widget

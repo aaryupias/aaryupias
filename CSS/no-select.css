@@ -1,0 +1,17 @@
+{
+  *-moz-user-select: none;
+  *-khtml-user-select: none;
+  *user-select: none;
+}
+.noselect 
+{
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   user-select: none;
+}
+.select
+{
+   -moz-user-select: ;
+   -khtml-user-select: ;
+   user-select: ;
+}

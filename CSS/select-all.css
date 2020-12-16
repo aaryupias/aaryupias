@@ -20,22 +20,25 @@
 
 blockquote
 {
-  position: relative;
-  padding-left: 1em;
-  border-left: 0.2em solid lighten($black, 40%);
-  font-family: 'Roboto', serif;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: 100;
-  &:before, &:after {
-      content: '\201C';
-      font-family: 'Sanchez';
-      color: lighten($black, 40%);
-   }
-   &:after {
-      content: '\201D';
-   }
+background-color: #f8f8f8;
+overflow: auto;
+width: 450px;
+padding: 0px 25px 25px 25px;
+color: black;
+border: 2px solid #ca2129;
+border-top-right-radius: 100px;
+-moz-border-radius-topright: 100px;
+-webkit-border-top-right-radius: 100px;
+border-bottom-left-radius: 100px;
+-moz-border-radius-bottomleft: 100px;
+-webkit-border-bottom-left-radius: 100px;
+box-shadow: 1px 1px 4px #ca2129;
+-moz-box-box-shadow: 1px 1px 4px green -web-kit-box-shadow:1px 1px 4px green;
+-goog-ms-box-shadow: 1px 1px 4px green;
+white-space: pre-wrap;
+white-space: -moz-pre-wrap !important;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+word-wrap: break-word;
+font-size: 20px;
 }
-
-
-

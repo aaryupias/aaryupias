@@ -1,3 +1,6 @@
+<center>
+<h2>Code to make all text selectable on click</h2>
+</center>
 <style>
 .selectarea
 
@@ -21,4 +24,30 @@
 </style>
 
 <div class="selectarea">
-selectable text here</div>
+&lt;style&gt;<br />
+.selectarea<br />
+
+{<br />
+ background:#BFC1C1 none repeat scroll 0 0;<br />
+ border:2px inset #378383;<br />
+ height:100%;<br />
+ margin:10px;<br />
+ overflow:auto;<br />
+ padding:6px;<br />
+ text-align:left;<br />
+ color:#003551;<br />
+<br />
+    -webkit-touch-callout: all; /* iOS Safari */<br />
+    -webkit-user-select: all; /* Safari */<br />
+    -khtml-user-select: all; /* Konqueror HTML */<br />
+    -moz-user-select: all; /* Firefox */<br />
+    -ms-user-select: all; /* Internet Explorer/Edge */<br />
+    user-select: all; /* Chrome and Opera */<br />
+}<br />
+&lt;/style&gt;<br />
+
+&lt;div class=&quot;selectarea&quot;&gt;<br />
+<b>your selectable text here</b><br />
+&lt;/div&gt;<br />
+
+</div>

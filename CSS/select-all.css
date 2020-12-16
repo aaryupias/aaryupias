@@ -1,4 +1,4 @@
-.selectarea
+selectarea
 
 {
  background:#F2DEDE none repeat scroll 0 0;
@@ -16,4 +16,21 @@
     -moz-user-select: all; /* Firefox */
     -ms-user-select: all; /* Internet Explorer/Edge */
     user-select: all; /* Chrome and Opera */
+}
+
+blockquote
+{
+max-width: 600px;
+text-align: center;
+margin: 20px;
+padding: 20px;
+font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+font-size: 20px;
+color: #428bca;
+border-left: 4px solid #428bca;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+border-right: 4px solid #428bca;
+border-top-right-radius: 30px;
+border-bottom-right-radius: 30px;
 }
